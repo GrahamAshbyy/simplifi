@@ -1,0 +1,11 @@
+BEGIN {
+    print $FILENAME;
+    OFS= ",";
+    print '"Date","Payee","Amount","Tags"'   # Output "hello" at the beginning
+}
+
+{
+    if (NR > 1) {   # Skip the first line
+        print $4, $1, $6. $3   # Output the second and first columns separated by a comma
+    }
+}
